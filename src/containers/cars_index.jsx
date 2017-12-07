@@ -8,7 +8,7 @@ import { fetchCars } from '../actions';
 class CarsIndex extends Component {
 
   componentWillMount() {
-    this.props.fetchCars();
+    this.props.fetchCars(this.props.garage);
   }
 
   renderCars(){
@@ -52,7 +52,8 @@ class CarsIndex extends Component {
 
 function mapStateToProps(state) {
   return {
-    cars: state.cars
+    cars: state.cars,
+    garage: state.garage
   }
 }
 
